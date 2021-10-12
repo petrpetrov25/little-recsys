@@ -9,7 +9,7 @@ RUN pip install -r requirements.txt
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 COPY src/train.py /srv/train.py
 COPY src/service.py /srv/service.py
-COPY data/items.csv /srv/items.csv
-COPY data/users.csv /srv/users.csv
-COPY data/user_item.csv /srv/user_item.csv
+COPY data/items.parquet /srv/items.parquet
+COPY data/users.parquet /srv/users.parquet
+COPY data/user_item.parquet /srv/user_item.parquet
 ENTRYPOINT ["docker-entrypoint.sh"]
